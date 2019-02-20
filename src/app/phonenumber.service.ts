@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class PhonenumberService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:3000/api/v1';
+  baseUrl = environment.baseUrl;
+  
 
   generateRandomPhoneNumbers() {
     return this.http.get(`${this.baseUrl}/create-phonenumbers`);
