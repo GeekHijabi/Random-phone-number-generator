@@ -1,13 +1,17 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NgxLoadingModule } from 'ngx-loading';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [NgxLoadingModule.forRoot({
+        primaryColour: '#FF1493',
+        tertiaryColour: '#FF1493'
+      }), HttpClientTestingModule, ToastrModule.forRoot()],
+      providers: [ToastrService],
       declarations: [
         AppComponent
       ],
@@ -23,13 +27,6 @@ describe('AppComponent', () => {
   it(`should have as title 'random-phone-number-generator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('random-phone-number-generator');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to random-phone-number-generator!');
+    expect(app.title).toEqual('Random Phone Numbers Generator');
   });
 });

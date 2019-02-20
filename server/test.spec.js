@@ -19,7 +19,7 @@ describe('Random Phonenumber Generator', () => {
     chai.request(server).get('/api/v1/create-phonenumbers')
         .end((err, res) => {
           res.should.have.status(201);
-          res.body.message.should.equal('Numbers successfully generated')
+          res.body.message.should.equal('20 Phone numbers successfully generated')
         });
   });
 
@@ -27,7 +27,7 @@ describe('Random Phonenumber Generator', () => {
     chai.request(server).get('/api/v1/get-phonenumbers')
         .end((err, res) => {
           res.should.have.status(200);
-          res.body.message.should.equal('Numbers fetched successfully')
+          res.body.message.should.equal('All Phone numbers fetched successfully')
         });
   });
 });
