@@ -1,4 +1,3 @@
-import { create } from "domain";
 import randomphoneController from "./randomphone.controller";
 
 const baseUrl = '/api/v1';
@@ -8,8 +7,8 @@ const routes = (app) => {
   res.status(200).send('Welcome to Random Phone Number Generator!')
 )
 
-app.get(`${baseUrl}/create-phonenumbers`, randomphoneController.createRandomNumbers);
-app.get(`${baseUrl}/get-phonenumbers`, randomphoneController.getRandomNumbers);
+app.get(`${baseUrl}/create-phonenumbers`, randomphoneController.createRandomNumbers.bind(randomphoneController));
+app.get(`${baseUrl}/get-phonenumbers`, randomphoneController.getRandomNumbers.bind(randomphoneController));
 }
 
 export default routes;

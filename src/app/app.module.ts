@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { NgxLoadingModule } from 'ngx-loading';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,7 +15,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    NgxLoadingModule.forRoot({
+      primaryColour: '#FF1493',
+      tertiaryColour: '#FF1493'
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
