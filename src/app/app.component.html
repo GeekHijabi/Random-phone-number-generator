@@ -1,23 +1,23 @@
  <div class="container">
-  <div class="header" *ngIf="numbers">
+  <div class="header">
     <span>Random Phone Number Generator</span>
   </div>
   <div class="top-row">
-    <button (click)="generateRandomNumbers()">Generate</button>
+    <button class="generate" (click)="generateRandomNumbers()">Generate</button>
     <div class="analytics">
-      <span>Length: <span>{{totalPhoneNumbers}}</span></span>
-      <span>Min Number: <span>{{minNum}}</span></span>
-      <span>Max Number: <span>{{maxNum}}</span></span>
+      <span *ngIf="totalPhoneNumbers">Length: <span>{{totalPhoneNumbers}}</span></span>
+      <span *ngIf="minNum">Min Number: <span>{{minNum}}</span></span>
+      <span *ngIf="maxNum">Max Number: <span>{{maxNum}}</span></span>
     </div>
   </div>
-  <div id="table">
+  <div id="table" *ngIf="totalPhoneNumbers">
     <div id="tb-head">
       <div class="tb-wrap">
         <div class="col col-id">Id</div>
         <div class="col col-pn pn">
           <span>Phone Number</span>
-          <button class="fas fa-sort-up" (click)="sortAscendingNum()"></button>
-          <button class="fas fa-sort-down" (click)="sortDescendingNum()"></button>
+          <button class="fas fa-arrow-up" (click)="sortAscendingNum()"></button>
+          <button class="fas fa-arrow-down" (click)="sortDescendingNum()"></button>
       </div>
       </div>
     </div>
