@@ -6,10 +6,8 @@ Random Phone Number Generator
 ------------------------------
 Random Phone Number Generator is a web app for a telecommunications company to generate 10 digits numbers randomly.
 
-## Explore app at:
+* Explore app [here](https://random-phone-number-generator.herokuapp.com/):
 ---
-* Coming soon
-
 
 ## Technologies
 -------------------
