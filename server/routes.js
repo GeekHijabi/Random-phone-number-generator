@@ -1,5 +1,4 @@
 import randomphoneController from "./randomphone.controller";
-import path from 'path';
 
 const baseUrl = '/api/v1';
 

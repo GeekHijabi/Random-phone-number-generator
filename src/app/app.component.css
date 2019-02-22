@@ -52,7 +52,7 @@ html, body {
   clear: both;
 }
 
-.top-row button {
+.generate {
   float: left;
   padding: 8px 15px;
   margin: 0 0 0 4%;
@@ -182,7 +182,10 @@ button {
   overflow-y: auto;
 }
 
-@media (min-width: 300px) and (max-width: 520px) {
+@media (min-width: 300px) and (max-width: 1360px) {
+  .header {
+    max-height: 53px;
+  }
   .container {
     position: absolute;
     top: 0;
